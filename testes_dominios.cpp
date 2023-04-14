@@ -1,0 +1,1 @@
+// Arquivo de implementação dos metodos das classes de teste dos dominios.

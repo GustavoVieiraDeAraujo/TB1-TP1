@@ -1,0 +1,1 @@
+// Arquivo de implementação das classes de teste das entidades.
