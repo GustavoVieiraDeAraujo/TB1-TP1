@@ -24,7 +24,6 @@ class TesteDesenvolvedor : public TesteUnitario
 {
 private:
     Desenvolvedor *desenvolvedor_teste;
-    int estado;
     void setUp() override;
     void tearDown() override;
     void testarCenarioSucesso() override;
