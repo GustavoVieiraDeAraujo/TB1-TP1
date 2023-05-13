@@ -1,4 +1,6 @@
 #include <string>
+#ifndef DOMINIOS_H_INCLUDED
+#define DOMINIOS_H_INCLUDED
 
 using namespace std;
 
@@ -6,33 +8,37 @@ using namespace std;
 // Classe dominio.
 // Classe abstrata.
 
-class dominio {
-    protected:
-        string valor_dominio;
-        virtual void validar_dominio(string)=0;
-    public:
-        void set_valor_dominio(string);
-        string get_valor_dominio() const;
+class Dominio
+{
+protected:
+    string valor_dominio;
+    virtual void validar_dominio(string) = 0;
+
+public:
+    void set_valor_dominio(string);
+    string get_valor_dominio() const;
 };
 
-inline string dominio::get_valor_dominio() const{
+inline string Dominio::get_valor_dominio() const
+{
     return valor_dominio;
 }
 
 // --------------
-// Classe classe. 
+// Classe classe.
 
 /// Regras de formatação:
 ///
 /// Só pode possuir os seguintes valores: UNIDADE, INTEGRACAO, FUMACA, SISTEMA, REGRESSAO, ACEITACAO.
 
-class classe:public dominio{
-    private:
-        void validar_dominio(string codigo) override;
+class Classe : public Dominio
+{
+private:
+    void validar_dominio(string codigo) override;
 };
 
 // --------------
-// Classe codigo. 
+// Classe codigo.
 
 /// Regras de formatação:
 ///
@@ -40,13 +46,14 @@ class classe:public dominio{
 /// - D é dígito (0-9);
 /// - L é letra (A-Z, a-z);
 
-class codigo:public dominio{
-    private:
-        void validar_dominio(string codigo) override;
+class Codigo : public Dominio
+{
+private:
+    void validar_dominio(string codigo) override;
 };
 
 // ------------
-// Classe data. 
+// Classe data.
 
 /// Regras de formatação:
 ///
@@ -56,9 +63,10 @@ class codigo:public dominio{
 /// - MES - JAN, FEV, MAR, ABR, MAI, JUN, JUL, AGO, SET, OUT, NOV, DEZ;
 /// - Deve ser levado em consideração se o ano é bissexto ou não é bissexto;
 
-class data:public dominio{
-    private:
-        void validar_dominio(string) override;
+class Data : public Dominio
+{
+private:
+    void validar_dominio(string) override;
 };
 
 // -----------------
@@ -70,10 +78,11 @@ class data:public dominio{
 /// - D é dígito (0-9);
 /// - X é dígito verificador calculado com módulo 10;
 
-class matricula:public dominio{
-    private:
-        bool calculo_modulo_10(string);
-        void validar_dominio(string) override;
+class Matricula : public Dominio
+{
+private:
+    bool calculo_modulo_10(string);
+    void validar_dominio(string) override;
 };
 
 // -----------------
@@ -83,9 +92,10 @@ class matricula:public dominio{
 ///
 /// Só pode possuir os seguintes valores: APROVADO e REPROVADO;
 
-class resultado:public dominio{
-    private:
-        void validar_dominio(string) override;
+class Resultado : public Dominio
+{
+private:
+    void validar_dominio(string) override;
 };
 
 // -------------
@@ -97,9 +107,10 @@ class resultado:public dominio{
 /// - Não pode haver caractere duplicado;
 /// - X é um dos seguintes caracteres: letra (A-Z, a-z), dígito (0-9), @, #, $, % ou &;
 
-class senha:public dominio{
-    private:
-        void validar_dominio(string) override;
+class Senha : public Dominio
+{
+private:
+    void validar_dominio(string) override;
 };
 
 // ----------------
@@ -110,9 +121,10 @@ class senha:public dominio{
 /// - X é dígito (0 - 9);
 /// - Formato +XXXXXXX (7 dígitos) a +XXXXXXXXXXXXXXX (15 dígitos);
 
-class telefone:public dominio{
-    private:
-        void validar_dominio(string) override;
+class Telefone : public Dominio
+{
+private:
+    void validar_dominio(string) override;
 };
 
 // -------------
@@ -125,7 +137,10 @@ class telefone:public dominio{
 /// - Não há espaços em branco em sequência;
 /// - Cada caractere X é letra, dígito (0-9), sinal de pontuação (. , ; ? ! : -), @, #, $, % ou &;
 
-class texto:public dominio{
-    private:
-        void validar_dominio(string) override; 
+class Texto : public Dominio
+{
+private:
+    void validar_dominio(string) override;
 };
+
+#endif // DOMINIOS_H_INCLUDED

@@ -6,14 +6,14 @@ using namespace std;
 
 // ------------------------------------------------
 // Implementação do metodo "set" da classe dominio.
-void dominio::set_valor_dominio(const string valor_dominio){
+void Dominio::set_valor_dominio(const string valor_dominio){
     validar_dominio(valor_dominio);
     this->valor_dominio = valor_dominio;
-}
+};
 
 // -----------------------------------------------------------
 // Implementação do metodo "validar_dominio" da classe classe.
-void classe::validar_dominio(const string classe){
+void Classe::validar_dominio(const string classe){
     regex valores_possiveis("(UNIDADE|INTEGRACAO|FUMACA|SISTEMA|REGRESSAO|ACEITACAO)");
     if(!regex_match(classe, valores_possiveis)){
         throw invalid_argument("Classe invalido.");
@@ -22,7 +22,7 @@ void classe::validar_dominio(const string classe){
 
 // -----------------------------------------------------------
 // Implementação do metodo "validar_dominio" da classe codigo.
-void codigo::validar_dominio(const string codigo){
+void Codigo::validar_dominio(const string codigo){
     regex formato_codigo("[a-zA-Z]{3}\\d{3}");
     if(!regex_match(codigo, formato_codigo)){
         throw invalid_argument("Codigo invalido.");
@@ -31,7 +31,7 @@ void codigo::validar_dominio(const string codigo){
 
 // ---------------------------------------------------------
 // Implementação do metodo "validar_dominio" da classe data.
-void data::validar_dominio(const string data){
+void Data::validar_dominio(const string data){
     regex formato_data;
     int ano = stoi(data.substr(7,10));
     bool bissexto = ((ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0));
@@ -46,7 +46,7 @@ void data::validar_dominio(const string data){
 
 // ----------------------------------------------
 // Implementação do metodo para calcular "modulo 10" da matricula.
-bool matricula::calculo_modulo_10(const string matricula) {
+bool Matricula::calculo_modulo_10(const string matricula) {
     int i(0),soma(0);
     for (i; i <= (matricula.length()-2); i++) {
         int digito = (matricula[i]-'0');
@@ -63,7 +63,7 @@ bool matricula::calculo_modulo_10(const string matricula) {
 
 // --------------------------------------------------------------
 // Implementação do metodo "validar_dominio" da classe matricula.
-void matricula::validar_dominio(const string matricula){
+void Matricula::validar_dominio(const string matricula){
     regex formato_matricula("[0-9]{7}");
     if(!(regex_match(matricula, formato_matricula) && calculo_modulo_10(matricula))){
         throw invalid_argument("Matricula invalida.");
@@ -72,7 +72,7 @@ void matricula::validar_dominio(const string matricula){
 
 // --------------------------------------------------------------
 // Implementação do metodo "validar_dominio" da classe resultado.
-void resultado::validar_dominio(const string resultado){
+void Resultado::validar_dominio(const string resultado){
     regex valores_possiveis("(APROVADO|REPROVADO)");
     if(!regex_match(resultado, valores_possiveis)){
         throw invalid_argument("Resultado invalido.");
@@ -81,7 +81,7 @@ void resultado::validar_dominio(const string resultado){
 
 // ----------------------------------------------------------
 // Implementação do metodo "validar_dominio" da classe senha.
-void senha::validar_dominio(const string senha){
+void Senha::validar_dominio(const string senha){
     regex formato_senha(R"((?!.*(.).*\1)[A-Za-z0-9@#$%&]{6})");
     if(!regex_match(senha, formato_senha)){
         throw invalid_argument("Senha invalida.");
@@ -90,7 +90,7 @@ void senha::validar_dominio(const string senha){
 
 // -------------------------------------------------------------
 // Implementação do metodo "validar_dominio" da classe telefone.
-void telefone::validar_dominio(const string telefone){
+void Telefone::validar_dominio(const string telefone){
     regex formato_telefone("\\+\\d{7,15}");
     if(!regex_match(telefone, formato_telefone)){
         throw invalid_argument("Telefone invalido.");
@@ -99,7 +99,7 @@ void telefone::validar_dominio(const string telefone){
 
 // ----------------------------------------------------------
 // Implementação do metodo "validar_dominio" da classe texto.
-void texto::validar_dominio(const string texto){
+void Texto::validar_dominio(const string texto){
     regex formato_texto("(?!.*\\s{2})(?:[a-zA-Z0-9.,;?!:-@$%& ]){10,20}");
     if(!regex_match(texto, formato_texto)){
         throw invalid_argument("Texto invalido.");
