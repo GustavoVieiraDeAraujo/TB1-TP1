@@ -10,8 +10,8 @@ protected:
     int estado;                              // Estado do teste.
     virtual void setUp() = 0;                // Metodo para criar unidade em teste.
     virtual void tearDown() = 0;             // Metodo para destruir unidade em teste.
-    virtual void testarCenarioSucesso() = 0; // Cenario de teste falha.
-    virtual void testarCenarioFalha() = 0;   // Cenario de teste sucesso.
+    //virtual void testarCenarioSucesso() = 0; // Cenario de teste falha.
+    //virtual void testarCenarioFalha() = 0;   // Cenario de teste sucesso.
 public:
     int run();                    // Metodo para executar teste.
     const static int SUCESSO = 1; // Definicao de constante para reportar resultado de teste.
@@ -24,9 +24,32 @@ class TesteDesenvolvedor : public TesteUnitario
 {
 private:
     Desenvolvedor *desenvolvedor_teste;
-    int estado;
     void setUp() override;
     void tearDown() override;
-    void testarCenarioSucesso() override;
-    void testarCenarioFalha() override;
+    //void testarCenarioSucesso() override;
+    //void testarCenarioFalha() override;
+};
+
+// ------------------------------------
+// Classe para testar a entidade Teste.
+class TesteTeste : public TesteUnitario
+{
+private:
+    Teste *teste_teste;
+    void setUp() override;
+    void tearDown() override;
+    //void testarCenarioSucesso() override;
+    //void testarCenarioFalha() override;
+};
+
+// ------------------------------------
+// Classe para testar a entidade CasoDeTeste.
+class TesteCasoDeTeste : public TesteUnitario
+{
+private:
+    CasoDeTeste *teste_caso_de_teste;
+    void setUp() override;
+    void tearDown() override;
+    //void testarCenarioSucesso() override;
+    //void testarCenarioFalha() override;
 };

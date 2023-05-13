@@ -16,6 +16,8 @@ int main()
     teste_texto testes_unitarios_texto;
 
     TesteDesenvolvedor testes_unitarios_desenvolvedor;
+    TesteTeste testes_unitarios_teste;
+    TesteCasoDeTeste testes_unitarios_caso_de_teste;
 
     switch (testes_unitarios_desenvolvedor.run())
     {
@@ -24,6 +26,26 @@ int main()
         break;
     case TesteDesenvolvedor::FALHA:
         cout << "FALHA-DESENVOLVEDOR" << endl;
+        break;
+    }
+
+    switch (testes_unitarios_teste.run())
+    {
+    case TesteTeste::SUCESSO:
+        cout << "SUCESSO-TESTE" << endl;
+        break;
+    case TesteTeste::FALHA:
+        cout << "FALHA-TESTE" << endl;
+        break;
+    }
+
+    switch (testes_unitarios_caso_de_teste.run())
+    {
+    case TesteTeste::SUCESSO:
+        cout << "SUCESSO-CASO-DE-TESTE" << endl;
+        break;
+    case TesteTeste::FALHA:
+        cout << "FALHA-CASO-DE-TESTE" << endl;
         break;
     }
 
