@@ -4,6 +4,7 @@
 
 // ----------------------------------
 // Classe para fazer teste unitarios.
+
 // Classe abstrata.
 class teste_unitario
 {
@@ -14,9 +15,21 @@ protected:
     virtual void testar_cenario_falha() = 0;   // Cenario de teste falha.
     virtual void testar_cenario_sucesso() = 0; // Cenario de teste sucesso.
 public:
-    int run();                    // Metodo para executar teste.
-    const static int SUCESSO = 1; // Definicao de constante para reportar resultado de teste.
-    const static int FALHA = -1;  // Definicao de constante para reportar resultado de teste.
+    /**
+     * @brief Metodo para executar o teste.
+     * @return O estado do teste (SUCESSO ou FALHA).
+     */
+    int run();
+
+    /**
+     * @brief Constante respresentando o sucesso do teste.
+     */
+    const static int SUCESSO = 1;
+
+    /**
+     * @brief Constante respresentando a falha do teste.
+     */
+    const static int FALHA = -1;
 };
 
 // ------------------------------------

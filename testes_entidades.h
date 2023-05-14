@@ -3,19 +3,35 @@
 
 // ----------------------------------
 // Classe para fazer teste unitarios.
-// Classe abstrata.
+
+/**
+ *
+ * @brief Classe abstrata.
+ */
 class TesteUnitario
 {
 protected:
-    int estado;                              // Estado do teste.
-    virtual void setUp() = 0;                // Metodo para criar unidade em teste.
-    virtual void tearDown() = 0;             // Metodo para destruir unidade em teste.
-    //virtual void testarCenarioSucesso() = 0; // Cenario de teste falha.
-    //virtual void testarCenarioFalha() = 0;   // Cenario de teste sucesso.
+    int estado;
+    virtual void setUp() = 0;
+    virtual void tearDown() = 0;
+    virtual void testarCenarioSucesso() = 0;
+
 public:
-    int run();                    // Metodo para executar teste.
-    const static int SUCESSO = 1; // Definicao de constante para reportar resultado de teste.
-    const static int FALHA = -1;  // Definicao de constante para reportar resultado de teste.
+    /**
+     * @brief Metodo para executar o teste.
+     * @return O estado do teste (SUCESSO ou FALHA).
+     */
+    int run();
+
+    /**
+     * @brief Constante respresentando o sucesso do teste.
+     */
+    const static int SUCESSO = 1;
+
+    /**
+     * @brief Constante respresentando a falha do teste.
+     */
+    const static int FALHA = -1;
 };
 
 // ------------------------------------
@@ -25,9 +41,8 @@ class TesteDesenvolvedor : public TesteUnitario
 private:
     Desenvolvedor *desenvolvedor_teste;
     void setUp() override;
+    void testarCenarioSucesso() override;
     void tearDown() override;
-    //void testarCenarioSucesso() override;
-    //void testarCenarioFalha() override;
 };
 
 // ------------------------------------
@@ -37,9 +52,8 @@ class TesteTeste : public TesteUnitario
 private:
     Teste *teste_teste;
     void setUp() override;
+    void testarCenarioSucesso() override;
     void tearDown() override;
-    //void testarCenarioSucesso() override;
-    //void testarCenarioFalha() override;
 };
 
 // ------------------------------------
@@ -49,7 +63,6 @@ class TesteCasoDeTeste : public TesteUnitario
 private:
     CasoDeTeste *teste_caso_de_teste;
     void setUp() override;
+    void testarCenarioSucesso() override;
     void tearDown() override;
-    //void testarCenarioSucesso() override;
-    //void testarCenarioFalha() override;
 };

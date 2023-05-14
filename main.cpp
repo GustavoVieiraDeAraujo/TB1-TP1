@@ -28,7 +28,7 @@ int main()
         cout << "FALHA-DESENVOLVEDOR" << endl;
         break;
     }
-
+    
     switch (testes_unitarios_teste.run())
     {
     case TesteTeste::SUCESSO:
@@ -48,7 +48,7 @@ int main()
         cout << "FALHA-CASO-DE-TESTE" << endl;
         break;
     }
-
+    
     switch (testes_unitarios_classe.run())
     {
     case teste_classe::SUCESSO:

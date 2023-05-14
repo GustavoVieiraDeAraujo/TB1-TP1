@@ -8,6 +8,7 @@ using namespace std;
 // Classe dominio.
 // Classe abstrata.
 
+
 class Dominio
 {
 protected:
@@ -15,7 +16,15 @@ protected:
     virtual void validar_dominio(string) = 0;
 
 public:
+    /**
+     * @brief Método para configurar o valor do atributo
+     * @param string com o valor a ser atribuído
+     */
     void set_valor_dominio(string);
+    /**
+     * @brief Método para configurar o valor do atributo
+     * @param String com o valor a ser atribuído
+     */
     string get_valor_dominio() const;
 };
 

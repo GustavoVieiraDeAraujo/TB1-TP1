@@ -10,6 +10,11 @@ using namespace std;
 // -------------------
 // Entidade Desenvolvedor.
 
+/**
+* @brief Classe Entidade Desenvolvedor que tem atributos matricula,nome,senha e classe
+           estes que sao objetos das classes Nome,Senha e Classe
+*/
+
 class Desenvolvedor
 {
 private:
@@ -103,6 +108,11 @@ inline Telefone Desenvolvedor::getTelefone() const
 // -------------------
 // Entidade Teste.
 
+/**
+* @brief Classe Entidade Teste que tem atributos codigo,nome e classe,
+           estes que sao objetos das classes Codigo, Nome e Classe
+*/
+
 class Teste
 {
 private:
@@ -176,6 +186,10 @@ inline Classe Teste::getClasse() const
 // -------------------
 // Entidade Caso de Teste.
 
+/**
+* @brief Classe Entidade CasoDeTeste que tem atributos codigo,data, nome,acao,resposta e resultado,
+           estes que sao objetos das classes Codigo, Data, Nome, Acao, Resposta e Resultado
+*/
 class CasoDeTeste
 {
 private:
