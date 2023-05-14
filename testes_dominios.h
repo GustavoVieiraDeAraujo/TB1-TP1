@@ -9,7 +9,7 @@
  *
  * @brief Classe abstrata de teste.
  */
-class teste_unitario
+class teste_unitario // 211068440
 {
 protected:
     int estado;                                // Estado do teste.
@@ -37,7 +37,7 @@ public:
 
 // ------------------------------------
 // Classe para testar o dominio classe.
-class teste_classe : public teste_unitario
+class teste_classe : public teste_unitario // 211068440
 {
 private:
     Classe *classe_teste;
@@ -49,7 +49,7 @@ private:
 
 // ------------------------------------
 // Classe para testar o dominio codigo.
-class teste_codigo : public teste_unitario
+class teste_codigo : public teste_unitario // 211068440
 {
 private:
     Codigo *codigo_teste;
@@ -61,7 +61,7 @@ private:
 
 // ----------------------------------
 // Classe para testar o dominio data.
-class teste_data : public teste_unitario
+class teste_data : public teste_unitario // 212006577
 {
 private:
     Data *data_teste;
@@ -73,7 +73,7 @@ private:
 
 // ---------------------------------------
 // Classe para testar o dominio matricula.
-class teste_matricula : public teste_unitario
+class teste_matricula : public teste_unitario // 212006577
 {
 private:
     Matricula *matricula_teste;
@@ -85,7 +85,7 @@ private:
 
 // ---------------------------------------
 // Classe para testar o dominio resultado.
-class teste_resultado : public teste_unitario
+class teste_resultado : public teste_unitario // 212006577
 {
 private:
     Resultado *resultado_teste;
@@ -97,7 +97,7 @@ private:
 
 // -----------------------------------
 // Classe para testar o dominio senha.
-class teste_senha : public teste_unitario
+class teste_senha : public teste_unitario // 211068440
 {
 private:
     Senha *senha_teste;
@@ -109,7 +109,7 @@ private:
 
 // --------------------------------------
 // Classe para testar o dominio telefone.
-class teste_telefone : public teste_unitario
+class teste_telefone : public teste_unitario // 211068440
 {
 private:
     Telefone *telefone_teste;
@@ -121,7 +121,7 @@ private:
 
 // --------------------------------------
 // Classe para testar o dominio telefone.
-class teste_texto : public teste_unitario
+class teste_texto : public teste_unitario // 212006737
 {
 private:
     Texto *texto_teste;

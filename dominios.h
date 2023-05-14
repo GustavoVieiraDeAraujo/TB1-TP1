@@ -10,7 +10,7 @@ using namespace std;
 /**
 * @brief Classe abstrata Dominio que tem um atributo valor
 */
-class Dominio
+class Dominio // 212006737
 {
 protected:
     string valor_dominio;
@@ -42,7 +42,7 @@ inline string Dominio::get_valor_dominio() const
 *  - UNIDADE, INTEGRACAO, FUMACA, SISTEMA, REGRESSAO, ACEITACAO.
 */
 
-class Classe : public Dominio
+class Classe : public Dominio // 212006737
 {
 private:
     void validar_dominio(string codigo) override;
@@ -58,7 +58,7 @@ private:
 *  - L = letra (A-Z, a-z);
 */
 
-class Codigo : public Dominio
+class Codigo : public Dominio // 212006737
 {
 private:
     void validar_dominio(string codigo) override;
@@ -76,7 +76,7 @@ private:
 * - Deve ser levado em consideracao se o ano é bissexto ou não é bissexto;
 */
 
-class Data : public Dominio
+class Data : public Dominio // 212006577
 {
 private:
     void validar_dominio(string) override;
@@ -92,7 +92,7 @@ private:
 * - X = dígito verificador calculado com modulo 10;
 */
 
-class Matricula : public Dominio
+class Matricula : public Dominio // 212006577
 {
 private:
     bool calculo_modulo_10(string);
@@ -107,7 +107,7 @@ private:
 * - So pode possuir os seguintes valores: APROVADO e REPROVADO;
 */
 
-class Resultado : public Dominio
+class Resultado : public Dominio // 212006577
 {
 private:
     void validar_dominio(string) override;
@@ -123,7 +123,7 @@ private:
 * - X e um dos seguintes caracteres: letra (A-Z, a-z), digito (0-9), @, #, $, % ou &;
 */
 
-class Senha : public Dominio
+class Senha : public Dominio // 211068440
 {
 private:
     void validar_dominio(string) override;
@@ -138,7 +138,7 @@ private:
 * - Formato +XXXXXXX (7 digitos) a +XXXXXXXXXXXXXXX (15 digitos);
 */
 
-class Telefone : public Dominio
+class Telefone : public Dominio // 211068440
 {
 private:
     void validar_dominio(string) override;
@@ -154,7 +154,7 @@ private:
 * - Não ha espaços em branco em sequencia;
 * - Cada caractere X = letra, digito (0-9), sinal de pontuacao (. , ; ? ! : -), @, #, $, % ou &;
 */
-class Texto : public Dominio
+class Texto : public Dominio // 211068440
 {
 private:
     void validar_dominio(string) override;

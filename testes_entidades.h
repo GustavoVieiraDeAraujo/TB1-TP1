@@ -8,7 +8,7 @@
  *
  * @brief Classe abstrata de teste.
  */
-class TesteUnitario
+class TesteUnitario // 212006737
 {
 protected:
     int estado;
@@ -40,7 +40,7 @@ public:
  *
  * @brief Classe para testar a entidade Desenvolvedor.
  */
-class TesteDesenvolvedor : public TesteUnitario
+class TesteDesenvolvedor : public TesteUnitario // 212006737
 {
 private:
     Desenvolvedor *desenvolvedor_teste;
@@ -56,7 +56,7 @@ private:
  *
  * @brief Classe para testar a entidade Teste.
  */
-class TesteTeste : public TesteUnitario
+class TesteTeste : public TesteUnitario // 212006737
 {
 private:
     Teste *teste_teste;

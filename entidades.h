@@ -19,7 +19,7 @@ using namespace std;
 * estes que sao objetos das classes Nome,Senha e Classe
 */
 
-class Desenvolvedor
+class Desenvolvedor // 212006737
 {
 private:
     Matricula matricula;
@@ -120,7 +120,7 @@ inline Telefone Desenvolvedor::getTelefone() const
 * estes que sao objetos das classes Codigo, Nome e Classe
 */
 
-class Teste
+class Teste // 211068440
 {
 private:
     Codigo codigo;
@@ -203,7 +203,7 @@ inline Classe Teste::getClasse() const
 * - resultado
 * estes que sao objetos das classes Codigo, Data, Nome, Acao, Resposta e Resultado
 */
-class CasoDeTeste
+class CasoDeTeste // 212006577
 {
 private:
     Codigo codigo;
