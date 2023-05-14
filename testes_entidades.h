@@ -12,9 +12,10 @@ class TesteUnitario
 {
 protected:
     int estado;
-    virtual void setUp() = 0;
-    virtual void tearDown() = 0;
-    virtual void testarCenarioSucesso() = 0;
+    virtual void setUp() = 0;                // Metodo para criar unidade em teste.
+    virtual void tearDown() = 0;             // Metodo para destruir unidade em teste.
+    virtual void testarCenarioSucesso() = 0; // Cenario de teste sucesso.
+    virtual void testarCenarioFalha() = 0;   // Cenario de teste sucesso.
 
 public:
     /**
@@ -42,6 +43,7 @@ private:
     Desenvolvedor *desenvolvedor_teste;
     void setUp() override;
     void testarCenarioSucesso() override;
+    void testarCenarioFalha() override;
     void tearDown() override;
 };
 
@@ -53,6 +55,7 @@ private:
     Teste *teste_teste;
     void setUp() override;
     void testarCenarioSucesso() override;
+    void testarCenarioFalha() override;
     void tearDown() override;
 };
 
@@ -64,5 +67,6 @@ private:
     CasoDeTeste *teste_caso_de_teste;
     void setUp() override;
     void testarCenarioSucesso() override;
+    void testarCenarioFalha() override;
     void tearDown() override;
 };

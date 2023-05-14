@@ -6,29 +6,29 @@
 
 int teste_unitario::run()
 {
-    criar_teste();
-    testar_cenario_sucesso();
-    testar_cenario_falha();
-    destruir_teste();
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
     return estado;
 }
 
 // --------------------------------------------------
 // Implementações dos metodos da classe teste_classe.
 
-void teste_classe::criar_teste()
+void teste_classe::setUp()
 {
     classe_teste = new Classe();
     estado = SUCESSO;
 }
 
-void teste_classe::destruir_teste()
+void teste_classe::tearDown()
 {
     delete classe_teste;
     classe_teste = nullptr;
 }
 
-void teste_classe::testar_cenario_sucesso()
+void teste_classe::testarCenarioSucesso()
 {
     try
     {
@@ -42,7 +42,7 @@ void teste_classe::testar_cenario_sucesso()
     }
 }
 
-void teste_classe::testar_cenario_falha()
+void teste_classe::testarCenarioFalha()
 {
     try
     {
@@ -59,19 +59,19 @@ void teste_classe::testar_cenario_falha()
 // --------------------------------------------------
 // Implementações dos metodos da classe teste_codigo.
 
-void teste_codigo::criar_teste()
+void teste_codigo::setUp()
 {
     codigo_teste = new Codigo();
     estado = SUCESSO;
 }
 
-void teste_codigo::destruir_teste()
+void teste_codigo::tearDown()
 {
     delete codigo_teste;
     codigo_teste = nullptr;
 }
 
-void teste_codigo::testar_cenario_sucesso()
+void teste_codigo::testarCenarioSucesso()
 {
     try
     {
@@ -85,7 +85,7 @@ void teste_codigo::testar_cenario_sucesso()
     }
 }
 
-void teste_codigo::testar_cenario_falha()
+void teste_codigo::testarCenarioFalha()
 {
     try
     {
@@ -102,19 +102,19 @@ void teste_codigo::testar_cenario_falha()
 // ------------------------------------------------
 // Implementações dos metodos da classe teste_data.
 
-void teste_data::criar_teste()
+void teste_data::setUp()
 {
     data_teste = new Data();
     estado = SUCESSO;
 }
 
-void teste_data::destruir_teste()
+void teste_data::tearDown()
 {
     delete data_teste;
     data_teste = nullptr;
 }
 
-void teste_data::testar_cenario_sucesso()
+void teste_data::testarCenarioSucesso()
 {
     try
     {
@@ -128,7 +128,7 @@ void teste_data::testar_cenario_sucesso()
     }
 }
 
-void teste_data::testar_cenario_falha()
+void teste_data::testarCenarioFalha()
 {
     try
     {
@@ -145,19 +145,19 @@ void teste_data::testar_cenario_falha()
 // -----------------------------------------------------
 // Implementações dos metodos da classe teste_matricula.
 
-void teste_matricula::criar_teste()
+void teste_matricula::setUp()
 {
     matricula_teste = new Matricula();
     estado = SUCESSO;
 }
 
-void teste_matricula::destruir_teste()
+void teste_matricula::tearDown()
 {
     delete matricula_teste;
     matricula_teste = nullptr;
 }
 
-void teste_matricula::testar_cenario_sucesso()
+void teste_matricula::testarCenarioSucesso()
 {
     try
     {
@@ -171,7 +171,7 @@ void teste_matricula::testar_cenario_sucesso()
     }
 }
 
-void teste_matricula::testar_cenario_falha()
+void teste_matricula::testarCenarioFalha()
 {
     try
     {
@@ -188,19 +188,19 @@ void teste_matricula::testar_cenario_falha()
 // --------------------------------------------------------
 // Implementações dos metodos da classe de teste_resultado.
 
-void teste_resultado::criar_teste()
+void teste_resultado::setUp()
 {
     resultado_teste = new Resultado();
     estado = SUCESSO;
 }
 
-void teste_resultado::destruir_teste()
+void teste_resultado::tearDown()
 {
     delete resultado_teste;
     resultado_teste = nullptr;
 }
 
-void teste_resultado::testar_cenario_sucesso()
+void teste_resultado::testarCenarioSucesso()
 {
     try
     {
@@ -214,7 +214,7 @@ void teste_resultado::testar_cenario_sucesso()
     }
 }
 
-void teste_resultado::testar_cenario_falha()
+void teste_resultado::testarCenarioFalha()
 {
     try
     {
@@ -231,19 +231,19 @@ void teste_resultado::testar_cenario_falha()
 // -------------------------------------------------
 // Implementações dos metodos da classe teste_senha.
 
-void teste_senha::criar_teste()
+void teste_senha::setUp()
 {
     senha_teste = new Senha();
     estado = SUCESSO;
 }
 
-void teste_senha::destruir_teste()
+void teste_senha::tearDown()
 {
     delete senha_teste;
     senha_teste = nullptr;
 }
 
-void teste_senha::testar_cenario_sucesso()
+void teste_senha::testarCenarioSucesso()
 {
     try
     {
@@ -257,7 +257,7 @@ void teste_senha::testar_cenario_sucesso()
     }
 }
 
-void teste_senha::testar_cenario_falha()
+void teste_senha::testarCenarioFalha()
 {
     try
     {
@@ -274,19 +274,19 @@ void teste_senha::testar_cenario_falha()
 // ----------------------------------------------------
 // Implementações dos metodos da classe teste_telefone.
 
-void teste_telefone::criar_teste()
+void teste_telefone::setUp()
 {
     telefone_teste = new Telefone();
     estado = SUCESSO;
 }
 
-void teste_telefone::destruir_teste()
+void teste_telefone::tearDown()
 {
     delete telefone_teste;
     telefone_teste = nullptr;
 }
 
-void teste_telefone::testar_cenario_sucesso()
+void teste_telefone::testarCenarioSucesso()
 {
     try
     {
@@ -300,7 +300,7 @@ void teste_telefone::testar_cenario_sucesso()
     }
 }
 
-void teste_telefone::testar_cenario_falha()
+void teste_telefone::testarCenarioFalha()
 {
     try
     {
@@ -317,19 +317,19 @@ void teste_telefone::testar_cenario_falha()
 // ----------------------------------------------------
 // Implementações dos metodos da classe de teste_texto.
 
-void teste_texto::criar_teste()
+void teste_texto::setUp()
 {
     texto_teste = new Texto();
     estado = SUCESSO;
 }
 
-void teste_texto::destruir_teste()
+void teste_texto::tearDown()
 {
     delete texto_teste;
     texto_teste = nullptr;
 }
 
-void teste_texto::testar_cenario_sucesso()
+void teste_texto::testarCenarioSucesso()
 {
     try
     {
@@ -343,7 +343,7 @@ void teste_texto::testar_cenario_sucesso()
     }
 }
 
-void teste_texto::testar_cenario_falha()
+void teste_texto::testarCenarioFalha()
 {
     try
     {

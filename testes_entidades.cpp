@@ -9,6 +9,7 @@ int TesteUnitario::run()
 {
     setUp();
     testarCenarioSucesso();
+    testarCenarioFalha();
     tearDown();
     return estado;
 }
@@ -62,6 +63,46 @@ void TesteDesenvolvedor::testarCenarioSucesso()
         estado = FALHA;
     }
 };
+void TesteDesenvolvedor::testarCenarioFalha()
+{
+    Matricula matricula;
+    Texto nome;
+    Senha senha;
+    Telefone telefone;
+    try
+    {
+        matricula.set_valor_dominio("1234562");
+        desenvolvedor_teste->setMatricula(matricula);
+        estado = FALHA;
+
+        nome.set_valor_dominio("Sapato  sujoooooooo");
+        desenvolvedor_teste->setNome(nome);
+        estado = FALHA;
+
+        senha.set_valor_dominio("MAR1234");
+        desenvolvedor_teste->setSenha(senha);
+        estado = FALHA;
+
+        telefone.set_valor_dominio("+854758999");
+        desenvolvedor_teste->setTelefone(telefone);
+        estado = FALHA;
+    }
+    catch (invalid_argument &excecao)
+    {
+        if (desenvolvedor_teste->getMatricula().get_valor_dominio() == "1234562")
+            estado = FALHA;
+        
+        if (desenvolvedor_teste->getNome().get_valor_dominio() == "Sapato  sujoooooooo")
+            estado = FALHA;
+
+        if (desenvolvedor_teste->getSenha().get_valor_dominio() == "MAR1234")
+            estado = FALHA;
+        
+        if (desenvolvedor_teste->getTelefone().get_valor_dominio() == "+854758999")
+            estado = FALHA;
+
+    }
+};
 
 // Implementações dos metodos da entidade Teste.
 void TesteTeste::setUp()
@@ -101,6 +142,37 @@ void TesteTeste::testarCenarioSucesso()
     catch (invalid_argument &excecao)
     {
         estado = FALHA;
+    }
+};
+void TesteTeste::testarCenarioFalha()
+{
+    Texto nome;
+    Codigo codigo;
+    Classe classe;
+    try
+    {
+        nome.set_valor_dominio("Sapato  sujoooooooo");
+        teste_teste->setNome(nome);
+        estado = FALHA;
+
+        codigo.set_valor_dominio("QWE3214");
+        teste_teste->setCodigo(codigo);
+        estado = FALHA;
+
+        classe.set_valor_dominio("SISTEME");
+        teste_teste->setClasse(classe);
+        estado = FALHA;
+    }
+    catch (invalid_argument &excecao)
+    {
+        if (teste_teste->getNome().get_valor_dominio() == "Sapato  sujoooooooo")
+            estado = FALHA;
+        
+        if (teste_teste->getCodigo().get_valor_dominio() == "QWE3214")
+            estado = FALHA;
+        
+        if (teste_teste->getClasse().get_valor_dominio() == "SISTEME")
+            estado = FALHA;
     }
 };
 
@@ -161,5 +233,61 @@ void TesteCasoDeTeste::testarCenarioSucesso()
     catch (invalid_argument &excecao)
     {
         estado = FALHA;
+    }
+};
+
+void TesteCasoDeTeste::testarCenarioFalha()
+{
+    Codigo codigo;
+    Data data;
+    Texto nome;
+    Texto acao;
+    Texto resposta;
+    Resultado resultado;
+    try
+    {
+        codigo.set_valor_dominio("QWE3214");
+        teste_caso_de_teste->setCodigo(codigo);
+        estado = FALHA;
+
+        data.set_valor_dominio("20/MAI/1990");
+        teste_caso_de_teste->setData(data);
+        estado = FALHA;
+
+        nome.set_valor_dominio("Sapato  sujoooooooo");
+        teste_caso_de_teste->setNome(nome);
+        estado = FALHA;
+
+        acao.set_valor_dominio("Sapato   limpooooo");
+        teste_caso_de_teste->setAcao(acao);
+        estado = FALHA;
+
+        resposta.set_valor_dominio("Sapato   brancoooooo");
+        teste_caso_de_teste->setResposta(resposta);
+        estado = FALHA;
+
+        resultado.set_valor_dominio("REPROVADE");
+        teste_caso_de_teste->setResultado(resultado);
+        estado = FALHA;
+    }
+    catch (invalid_argument &excecao)
+    {
+        if (teste_caso_de_teste->getCodigo().get_valor_dominio() == "QWE3214")
+            estado = FALHA;
+        
+        if (teste_caso_de_teste->getData().get_valor_dominio() == "20/MAI/1990")
+            estado = FALHA;
+        
+        if (teste_caso_de_teste->getNome().get_valor_dominio() == "Sapato  sujoooooooo")
+            estado = FALHA;
+
+        if (teste_caso_de_teste->getAcao().get_valor_dominio() == "Sapato   limpooooo")
+            estado = FALHA;
+        
+        if (teste_caso_de_teste->getResposta().get_valor_dominio() == "Sapato   brancoooooo")
+            estado = FALHA;
+        
+        if (teste_caso_de_teste->getResultado().get_valor_dominio() == "REPROVADE")
+            estado = FALHA;
     }
 };
