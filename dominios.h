@@ -6,9 +6,10 @@ using namespace std;
 
 // ----------------
 // Classe dominio.
-// Classe abstrata.
 
-
+/**
+* @brief Classe abstrata Dominio que tem um atributo valor
+*/
 class Dominio
 {
 protected:
@@ -17,13 +18,13 @@ protected:
 
 public:
     /**
-     * @brief Método para configurar o valor do atributo
+     * @brief Metodo para configurar o valor do atributo
      * @param string com o valor a ser atribuído
      */
     void set_valor_dominio(string);
     /**
-     * @brief Método para configurar o valor do atributo
-     * @param String com o valor a ser atribuído
+     * @brief Metodo para configurar o valor do atributo
+     * @param String com o valor a ser atribuido
      */
     string get_valor_dominio() const;
 };
@@ -34,11 +35,12 @@ inline string Dominio::get_valor_dominio() const
 }
 
 // --------------
-// Classe classe.
+// Classe Classe.
 
-/// Regras de formatação:
-///
-/// Só pode possuir os seguintes valores: UNIDADE, INTEGRACAO, FUMACA, SISTEMA, REGRESSAO, ACEITACAO.
+/**
+* @brief Classe Classe representando uma string que pode possuir os seguintes valores:
+*  - UNIDADE, INTEGRACAO, FUMACA, SISTEMA, REGRESSAO, ACEITACAO.
+*/
 
 class Classe : public Dominio
 {
@@ -47,13 +49,14 @@ private:
 };
 
 // --------------
-// Classe codigo.
+// Classe Código.
 
-/// Regras de formatação:
-///
-/// - Formato LLLDDD;
-/// - D é dígito (0-9);
-/// - L é letra (A-Z, a-z);
+/**
+* @brief Classe Codigo representando uma string que possui as seguintes regras de formatacao:
+*  - Formato LLLDDD;
+*  - D = dígito (0-9);
+*  - L = letra (A-Z, a-z);
+*/
 
 class Codigo : public Dominio
 {
@@ -62,15 +65,16 @@ private:
 };
 
 // ------------
-// Classe data.
+// Classe Data.
 
-/// Regras de formatação:
-///
-/// - DD - 1 a 31
-/// - ANO - 2000 a 2999;
-/// - Formato DD/MES/ANO;
-/// - MES - JAN, FEV, MAR, ABR, MAI, JUN, JUL, AGO, SET, OUT, NOV, DEZ;
-/// - Deve ser levado em consideração se o ano é bissexto ou não é bissexto;
+/**
+* @brief Classe Data representando uma string que possui as seguintes regras de formatacao:
+* - DD - 1 a 31
+* - ANO - 2000 a 2999;
+* - Formato DD/MES/ANO;
+* - MES - JAN, FEV, MAR, ABR, MAI, JUN, JUL, AGO, SET, OUT, NOV, DEZ;
+* - Deve ser levado em consideracao se o ano é bissexto ou não é bissexto;
+*/
 
 class Data : public Dominio
 {
@@ -79,13 +83,14 @@ private:
 };
 
 // -----------------
-// Classe matricula.
+// Classe Matricula.
 
-/// Regras de formatação:
-///
-/// - Formato DDDDDDX;
-/// - D é dígito (0-9);
-/// - X é dígito verificador calculado com módulo 10;
+/**
+* @brief Classe Matricula representando uma string que possui as seguintes regras de formatacao:
+* - Formato DDDDDDX;
+* - D = dígito (0-9);
+* - X = dígito verificador calculado com modulo 10;
+*/
 
 class Matricula : public Dominio
 {
@@ -95,11 +100,12 @@ private:
 };
 
 // -----------------
-// Classe resultado.
+// Classe Resultado.
 
-/// Regras de formatação:
-///
-/// Só pode possuir os seguintes valores: APROVADO e REPROVADO;
+/**
+* @brief Classe Resultado representando uma string que possui as seguintes regras de formatacao:
+* - So pode possuir os seguintes valores: APROVADO e REPROVADO;
+*/
 
 class Resultado : public Dominio
 {
@@ -108,13 +114,14 @@ private:
 };
 
 // -------------
-// Classe senha.
+// Classe Senha.
 
-/// Regras de formatação:
-///
-/// - Formato XXXXXX;
-/// - Não pode haver caractere duplicado;
-/// - X é um dos seguintes caracteres: letra (A-Z, a-z), dígito (0-9), @, #, $, % ou &;
+/**
+* @brief Classe Senha representando uma string que possui as seguintes regras de formatacao:
+* - Formato XXXXXX;
+* - Não pode haver caractere duplicado;
+* - X e um dos seguintes caracteres: letra (A-Z, a-z), digito (0-9), @, #, $, % ou &;
+*/
 
 class Senha : public Dominio
 {
@@ -123,12 +130,13 @@ private:
 };
 
 // ----------------
-// Classe telefone.
+// Classe Telefone.
 
-/// Regras de formatação:
-///
-/// - X é dígito (0 - 9);
-/// - Formato +XXXXXXX (7 dígitos) a +XXXXXXXXXXXXXXX (15 dígitos);
+/**
+* @brief Classe Telefone representando uma string que possui as seguintes regras de formatacao:
+* - X = digito (0 - 9);
+* - Formato +XXXXXXX (7 digitos) a +XXXXXXXXXXXXXXX (15 digitos);
+*/
 
 class Telefone : public Dominio
 {
@@ -137,15 +145,15 @@ private:
 };
 
 // -------------
-// Classe texto.
+// Classe Texto.
 
-/// Regras de formatação:
-///
-/// - Não há acentuação;
-/// - 10 a 20 caracteres;
-/// - Não há espaços em branco em sequência;
-/// - Cada caractere X é letra, dígito (0-9), sinal de pontuação (. , ; ? ! : -), @, #, $, % ou &;
-
+/**
+* @brief Classe Texto representando uma string que possui as seguintes regras de formatacao:
+* - Nao ha acentuacao;
+* - 10 a 20 caracteres;
+* - Não ha espaços em branco em sequencia;
+* - Cada caractere X = letra, digito (0-9), sinal de pontuacao (. , ; ? ! : -), @, #, $, % ou &;
+*/
 class Texto : public Dominio
 {
 private:

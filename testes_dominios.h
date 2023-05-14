@@ -5,7 +5,10 @@
 // ----------------------------------
 // Classe para fazer teste unitarios.
 
-// Classe abstrata.
+/**
+ *
+ * @brief Classe abstrata de teste.
+ */
 class teste_unitario
 {
 protected:

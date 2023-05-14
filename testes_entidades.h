@@ -6,7 +6,7 @@
 
 /**
  *
- * @brief Classe abstrata.
+ * @brief Classe abstrata de teste.
  */
 class TesteUnitario
 {
@@ -36,7 +36,10 @@ public:
 };
 
 // ------------------------------------
-// Classe para testar a entidade Desenvolvedor.
+/**
+ *
+ * @brief Classe para testar a entidade Desenvolvedor.
+ */
 class TesteDesenvolvedor : public TesteUnitario
 {
 private:
@@ -49,6 +52,10 @@ private:
 
 // ------------------------------------
 // Classe para testar a entidade Teste.
+/**
+ *
+ * @brief Classe para testar a entidade Teste.
+ */
 class TesteTeste : public TesteUnitario
 {
 private:
@@ -60,7 +67,10 @@ private:
 };
 
 // ------------------------------------
-// Classe para testar a entidade CasoDeTeste.
+/**
+ *
+ * @brief Classe para testar a entidade CasoDeTeste.
+ */
 class TesteCasoDeTeste : public TesteUnitario
 {
 private:
