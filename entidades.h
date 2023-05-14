@@ -19,16 +19,48 @@ private:
     Telefone telefone;
 
 public:
+    /**
+     * @brief Metodo para atribuir a matricula
+     * @param string com o valor da matricula a ser atribuido
+     */
     void setMatricula(const Matricula &);
+    /**
+     * @brief Metodo para obter o valor da matricula
+     * @return String com o valor da matricula
+     */
     Matricula getMatricula() const;
 
+    /**
+     * @brief Metodo para atribuir o nome
+     * @param string com o valor do nome a ser atribuido
+     */
     void setNome(const Texto &);
+    /**
+     * @brief Metodo para obter o valor do nome
+     * @return String com o valor do nome
+     */
     Texto getNome() const;
 
+    /**
+     * @brief Metodo para atribuir a senha
+     * @param string com o valor da senha a ser atribuido
+     */
     void setSenha(const Senha &);
+    /**
+     * @brief Metodo para obter o valor da senha
+     * @return String com o valor da senha
+     */
     Senha getSenha() const;
 
+    /**
+     * @brief Metodo para atribuir o telefone
+     * @param string com o valor do telefone a ser atribuido
+     */
     void setTelefone(const Telefone &);
+    /**
+     * @brief Metodo para obter o valor do telefone
+     * @return String com o valor do telefone
+     */
     Telefone getTelefone() const;
 };
 
@@ -79,13 +111,37 @@ private:
     Classe classe;
 
 public:
+    /**
+     * @brief Metodo para atribuir o codigo
+     * @param string com o valor do codigo a ser atribuido
+     */
     void setCodigo(const Codigo &);
+    /**
+     * @brief Metodo para obter o valor do codigo
+     * @return String com o valor do codigo
+     */
     Codigo getCodigo() const;
 
+    /**
+     * @brief Metodo para atribuir o nome
+     * @param string com o valor do nome a ser atribuido
+     */
     void setNome(const Texto &);
+    /**
+     * @brief Metodo para obter o valor do nome
+     * @return String com o valor do nome
+     */
     Texto getNome() const;
 
+    /**
+     * @brief Metodo para atribuir a classe
+     * @param string com o valor da classe a ser atribuido
+     */
     void setClasse(const Classe &);
+    /**
+     * @brief Metodo para obter o valor da classe
+     * @return String com o valor da classe
+     */
     Classe getClasse() const;
 };
 
@@ -131,22 +187,70 @@ private:
     Resultado resultado;
 
 public:
+    /**
+     * @brief Metodo para atribuir o codigo
+     * @param string com o valor do codigo a ser atribuido
+     */
     void setCodigo(const Codigo &);
+    /**
+     * @brief Metodo para obter o valor do codigo
+     * @return String com o valor do codigo
+     */
     Codigo getCodigo() const;
 
+    /**
+     * @brief Metodo para atribuir a data
+     * @param string com o valor da data a ser atribuido
+     */
     void setData(const Data &);
+    /**
+     * @brief Metodo para obter o valor da data
+     * @return String com o valor da data
+     */
     Data getData() const;
 
+    /**
+     * @brief Metodo para atribuir o nome
+     * @param string com o valor do nome a ser atribuido
+     */
     void setNome(const Texto &);
+    /**
+     * @brief Metodo para obter o valor do nome
+     * @return String com o valor do nome
+     */
     Texto getNome() const;
 
+    /**
+     * @brief Metodo para configurar a acao
+     * @param string com o valor de acao a ser atribuido
+     */
     void setAcao(const Texto &);
+    /**
+     * @brief Metodo para obter o valor da acao
+     * @return String com o valor da acao
+     */
     Texto getAcao() const;
 
+    /**
+     * @brief Metodo para configurar a resposta
+     * @param string com o valor de resposta a ser atribuido
+     */
     void setResposta(const Texto &);
+    /**
+     * @brief Metodo para obter o valor da resposta
+     * @return String com o valor da resposta
+     */
     Texto getResposta() const;
 
+    /**
+     * @brief Metodo para configurar resultado
+     * @param string com o valor de resultado a ser atribuido
+     */
     void setResultado(const Resultado &);
+    /**
+     * @brief Metodo para obter o valor do resultado
+     * @return String com o valor do resultado
+     */
     Resultado getResultado() const;
 };
 
